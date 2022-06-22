@@ -1,0 +1,41 @@
+{
+    "table_name": "table_a",
+    "select_list": ["cola","colb","colc"],
+    "filters":[
+        {"condition":"in","column":"cola","value":"in"},
+        {"condition":"like","column":"colb","value":"sucess"},
+        {"condition":"greater then","column":"colc","value":"20"},
+        {"condition":"Between","column":"colc","value":"10|20"}
+    ],
+    "groupby":["cola","colb","colc"],
+    "joins":[
+        {
+            "table_name": "table_b",
+            "select_list": ["cola","colb","colc"],
+            "filters":[
+                {"condition":"in","column":"cola","value":"in"},
+                {"condition":"equal","column":"colb","value":"sucess"}
+            ],
+            "groupby":["cola","colb","colc"],
+            "join_key":[
+                {"table1":"table_a","column1":"colb","table2":"table_b","column2":"cola"}
+                
+            ],
+            "join_type":{"type":"inner","table1":"tablea","table2":"table_b"}
+    },
+    {
+        "table_name": "table_c",
+        "select_list": ["cold","cole","colf"],
+        "filters":[
+            {"condition":"in","column":"cold","value":"in"},
+            {"condition":"equal","column":"cole","value":"sucess"}
+        ],
+        "groupby":["cold","cole","colf"],
+        "join_key":[
+            {"table1":"table_a","column1":"colb","table2":"table_c","column2":"cold"}
+            
+        ],
+        "join_type":{"type":"left","table1":"tablea","table2":"table_c"}
+}
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "table_name": "table_a",
+    "select_list": ["cola","colb","colc"],
+    "filters":[
+        {"condition":"in","column":"cola","value":"india|Australia"},
+        {"condition":"equal","column":"colb","value":"sucess"},
+        {"condition":"greater then","column":"colc","value":"20"},
+        {"condition":"Between","column":"colc","value":"10|20"}
+    ],
+    "groupby":["cola","colb","colc"],
+    "joins":[
+    ]
+}
